@@ -7,7 +7,8 @@
   "type": "module",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist --public-url /sponify/",
+    "build": "parcel build index.html --dist-dir ./dist",
+    "buildgit": "parcel build index.html --public-url /sponify/",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
