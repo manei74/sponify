@@ -4,14 +4,17 @@
   "description": "recipe application",
   "license": "ISC",
   "author": "Nikita Maneev",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --dist-dir ./dist --public-url /sponify/",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.13.3",
-    "parcel": "^2.13.3"
+    "gh-pages": "^6.3.0",
+    "parcel": "^2.13.3",
+    "svgo": "^3.3.2"
   },
   "dependencies": {
     "core-js": "^3.40.0",
