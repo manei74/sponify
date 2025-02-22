@@ -20,7 +20,7 @@ html {
 
 body {
   color: #615551;
-  background-image: linear-gradient(to bottom right, #e4fb89, #82f4cc);
+  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: calc(100vh - 8vw);
@@ -55,7 +55,7 @@ body {
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
-  background-image: linear-gradient(to bottom right, #e4fb89, #82f4cc);
+  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
   border: none;
   border-radius: 10rem;
   align-items: center;
@@ -101,7 +101,7 @@ body {
 }
 
 .btn--inline {
-  color: #86f382;
+  color: #f38e82;
   cursor: pointer;
   background-color: #f9f5f3;
   border: none;
@@ -126,7 +126,7 @@ body {
 }
 
 .btn--inline:hover {
-  color: #82f4cc;
+  color: #f48982;
   background-color: #f2efee;
 }
 
@@ -136,7 +136,7 @@ body {
 
 .btn--round {
   cursor: pointer;
-  background-image: linear-gradient(to bottom right, #e4fb89, #82f4cc);
+  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
   border: none;
   border-radius: 50%;
   justify-content: center;
@@ -170,7 +170,7 @@ body {
 }
 
 .btn--tiny svg {
-  fill: #86f382;
+  fill: #f38e82;
   width: 100%;
   height: 100%;
   transition: all .3s;
@@ -181,12 +181,12 @@ body {
 }
 
 .btn--tiny:hover svg {
-  fill: #82f4cc;
+  fill: #f48982;
   transform: translateY(-1px);
 }
 
 .btn--tiny:active svg {
-  fill: #82f4cc;
+  fill: #f48982;
   transform: translateY(0);
 }
 
@@ -195,7 +195,7 @@ body {
 }
 
 .heading--2 {
-  color: #86f382;
+  color: #f38e82;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 2.5rem;
@@ -213,7 +213,7 @@ body {
 }
 
 .spinner svg {
-  fill: #86f382;
+  fill: #f38e82;
   width: 6rem;
   height: 6rem;
   animation: 2s linear infinite rotate;
@@ -237,7 +237,7 @@ body {
 }
 
 .message svg, .error svg {
-  fill: #86f382;
+  fill: #f38e82;
   width: 3rem;
   height: 3rem;
   transform: translateY(-.3rem);
@@ -342,7 +342,7 @@ body {
 }
 
 .nav__btn svg {
-  fill: #86f382;
+  fill: #f38e82;
   width: 2.4rem;
   height: 2.4rem;
   margin-right: .7rem;
@@ -423,7 +423,7 @@ body {
 .preview__fig:before {
   content: "";
   opacity: .4;
-  background-image: linear-gradient(to bottom right, #e4fb89, #82f4cc);
+  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
   width: 100%;
   height: 100%;
   display: block;
@@ -449,7 +449,7 @@ body {
 }
 
 .preview__title {
-  color: #86f382;
+  color: #f38e82;
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -480,7 +480,7 @@ body {
 }
 
 .preview__user-generated svg {
-  fill: #86f382;
+  fill: #f38e82;
   width: 1.2rem;
   height: 1.2rem;
 }
@@ -539,7 +539,7 @@ body {
 .recipe__fig:before {
   content: "";
   opacity: .6;
-  background-image: linear-gradient(to bottom right, #e4fb89, #82f4cc);
+  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
   width: 100%;
   height: 100%;
   display: block;
@@ -571,7 +571,7 @@ body {
 
 .recipe__title span {
   box-decoration-break: clone;
-  background-image: linear-gradient(to bottom right, #e4fb89, #82f4cc);
+  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
   padding: 1.3rem 2rem;
 }
 
@@ -599,7 +599,7 @@ body {
 }
 
 .recipe__info-icon {
-  fill: #86f382;
+  fill: #f38e82;
   width: 2.35rem;
   height: 2.35rem;
   margin-right: 1.15rem;
@@ -629,7 +629,7 @@ body {
 }
 
 .recipe__user-generated svg {
-  fill: #86f382;
+  fill: #f38e82;
   width: 2.25rem;
   height: 2.25rem;
 }
@@ -656,7 +656,7 @@ body {
 }
 
 .recipe__icon {
-  fill: #86f382;
+  fill: #f38e82;
   flex: none;
   width: 2rem;
   height: 2rem;
@@ -763,7 +763,7 @@ body {
 
 .upload__column input:focus {
   background-color: #f9f5f3;
-  border: 1px solid #86f382;
+  border: 1px solid #f38e82;
   outline: none;
 }
 

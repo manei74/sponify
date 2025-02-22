@@ -699,6 +699,12 @@ const controlAddRecipe = async function(newRecipe) {
         (0, _addRecipeViewJsDefault.default).renderError(err.message);
     }
 };
+document.addEventListener('DOMContentLoaded', function() {
+    const logo = document.querySelector('.header__logo');
+    if (logo) logo.onclick = function() {
+        window.location.reload();
+    };
+});
 const init = function() {
     (0, _bookmarksViewJsDefault.default).addHandlerRender(controlBookmarks);
     (0, _recipeViewJsDefault.default).addHandlerRender(controlRecipes);
@@ -710,7 +716,7 @@ const init = function() {
 };
 init();
 
-},{"core-js/modules/web.immediate.js":"49tUX","./model.js":"Y4A21","./views/recipeView.js":"l60JC","./views/searchView.js":"9OQAM","./views/resultsView.js":"cSbZE","./views/paginationView.js":"6z7bi","./views/bookmarksView.js":"4Lqzq","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./views/addRecipeView.js":"i6DNj","./config.js":"k5Hzs"}],"49tUX":[function(require,module,exports,__globalThis) {
+},{"core-js/modules/web.immediate.js":"49tUX","./model.js":"Y4A21","./config.js":"k5Hzs","./views/recipeView.js":"l60JC","./views/searchView.js":"9OQAM","./views/resultsView.js":"cSbZE","./views/paginationView.js":"6z7bi","./views/bookmarksView.js":"4Lqzq","./views/addRecipeView.js":"i6DNj","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"49tUX":[function(require,module,exports,__globalThis) {
 'use strict';
 // TODO: Remove this module from `core-js@4` since it's split to modules listed below
 require("52e9b3eefbbce1ed");
@@ -3445,7 +3451,8 @@ class AddRecipeView extends (0, _viewJsDefault.default) {
     _window = document.querySelector('.add-recipe-window');
     _overlay = document.querySelector('.overlay');
     _btnOpen = document.querySelector('.nav__btn--add-recipe');
-    _btnClose = document.querySelector('.btn--close-modal');
+    // Remove initial selection of _btnClose since it will be replaced
+    // _btnClose = document.querySelector('.btn--close-modal');
     constructor(){
         super();
         this._addHandlerShowWindow();
@@ -3459,8 +3466,19 @@ class AddRecipeView extends (0, _viewJsDefault.default) {
         this._btnOpen.addEventListener('click', this.toggleWindow.bind(this));
     }
     _addHandlerHideWindow() {
-        this._btnClose.addEventListener('click', this.toggleWindow.bind(this));
+        // Use delegation on the window element so new close buttons are handled too.
+        this._window.addEventListener('click', (e)=>{
+            if (e.target.closest('.btn--close-modal')) this._handleCloseAndReset();
+        });
+        // Also close when clicking on the overlay
         this._overlay.addEventListener('click', this.toggleWindow.bind(this));
+    }
+    _handleCloseAndReset() {
+        this.toggleWindow();
+        // Clear the form (and any error messages)
+        this._parentElement.innerHTML = '';
+        // Re-render the initial markup
+        this._parentElement.insertAdjacentHTML('afterbegin', this._generateMarkup());
     }
     addHandlerUpload(handler) {
         this._parentElement.addEventListener('submit', function(e) {
@@ -3472,10 +3490,83 @@ class AddRecipeView extends (0, _viewJsDefault.default) {
             handler(data);
         });
     }
-    _generateMarkup() {}
+    _generateMarkup() {
+        // Ensure that the close button is set to type="button" so it doesn't submit the form
+        return `
+      <button type="button" class="btn--close-modal">&times;</button>
+      <form class="upload">
+        <div class="upload__column">
+          <h3 class="upload__heading">Recipe data</h3>
+          <label>Title</label>
+          <input value="" required name="title" type="text" />
+          <label>URL</label>
+          <input value="" required name="sourceUrl" type="text" />
+          <label>Image URL</label>
+          <input value="" required name="image" type="text" />
+          <label>Publisher</label>
+          <input value="" required name="publisher" type="text" />
+          <label>Prep time</label>
+          <input value="" required name="cookingTime" type="number" />
+          <label>Servings</label>
+          <input value="" required name="servings" type="number" />
+        </div>
+
+        <div class="upload__column">
+          <h3 class="upload__heading">Ingredients</h3>
+          <label>Ingredient 1</label>
+          <input
+            value=""
+            type="text"
+            required
+            name="ingredient-1"
+            placeholder="1,,Avocado"
+          />
+          <label>Ingredient 2</label>
+          <input
+            value=""
+            type="text"
+            name="ingredient-2"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+          <label>Ingredient 3</label>
+          <input
+            value=""
+            type="text"
+            name="ingredient-3"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+          <label>Ingredient 4</label>
+          <input
+            type="text"
+            name="ingredient-4"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+          <label>Ingredient 5</label>
+          <input
+            type="text"
+            name="ingredient-5"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+          <label>Ingredient 6</label>
+          <input
+            type="text"
+            name="ingredient-6"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+        </div>
+
+<button type="submit" class="btn upload__btn">
+  <svg>
+     <use href="${0, _iconsSvgDefault.default}#icon-upload-cloud"></use>
+  </svg>
+  <span>Upload</span>
+</button>
+      </form>
+    `;
+    }
 }
 exports.default = new AddRecipeView();
 
-},{"./View.js":"5cUXS","url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["ik2hV","aenu9"], "aenu9", "parcelRequire94c2")
+},{"./View.js":"5cUXS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../img/icons.svg":"loVOp"}]},["ik2hV","aenu9"], "aenu9", "parcelRequire94c2")
 
 //# sourceMappingURL=index.e37f48ea.js.map
