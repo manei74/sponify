@@ -24,6 +24,19 @@
 ## 📦 Installation & Setup
 
 1. **Clone the repository**  
-   ```sh
    git clone https://github.com/manei74/sponify.git
    cd sponify
+2. **Install dependencies**
+   npm install
+3. **Run the development server**
+   npm start
+4. **Build the project**
+   npm run build
+5. **Deploy to GitHub Pages**
+   npm run deploy
+   
+## 🎓 About This Project
+This is a final project from an Udemy JavaScript course. It was built to demonstrate skills in fetching APIs, DOM manipulation, and state management using Vanilla JavaScript.
+
+## 📝 License
+This project is for learning purposes. Feel free to use and modify it! 🚀
