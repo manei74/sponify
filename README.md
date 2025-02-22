@@ -2,6 +2,10 @@
 
 **Sponify** is a recipe search, bookmark, and creation web app. It allows users to search for recipes from an external API, save them as bookmarks, and even add their own custom recipes.
 
+## 🌍 Live Website
+
+👉 **Visit Sponify:** [https://manei74.github.io/sponify/](https://manei74.github.io/sponify/)
+
 ## 🚀 Features
 
 - 🔎 **Search Recipes** – Find thousands of recipes from an API.
