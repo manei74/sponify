@@ -12,6 +12,7 @@ export default class View {
    * @author Nikita Maneev
    * @todo finish implementation
    */
+
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();

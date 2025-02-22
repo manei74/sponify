@@ -126,6 +126,15 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+document.addEventListener('DOMContentLoaded', function () {
+  const logo = document.querySelector('.header__logo');
+  if (logo) {
+    logo.onclick = function () {
+      window.location.reload();
+    };
+  }
+});
+
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
